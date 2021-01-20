@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Azure.Cosmos;
+using Microsoft.Azure.Cosmos.Linq;
 using VerifyXunit;
 using Xunit;
 
@@ -39,7 +41,7 @@ public class Tests
 
         Family item = new()
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.NewGuid().ToString(),
             LastName = "Andersen",
             Address = new Address
             {
@@ -48,11 +50,48 @@ public class Tests
                 City = "Seattle"
             }
         };
+
         #region ItemResponse
+
         var response = await container.CreateItemAsync(
             item,
             new PartitionKey(item.LastName));
         await Verifier.Verify(response);
+
+        #endregion
+    }
+
+    [Fact]
+    public async Task FeedResponse()
+    {
+        Database database = await client.CreateDatabaseIfNotExistsAsync("db");
+
+        Container container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
+
+        Family item = new()
+        {
+            Id = Guid.NewGuid().ToString(),
+            LastName = "Andersen",
+            Address = new Address
+            {
+                State = "WA",
+                County = "King",
+                City = "Seattle"
+            }
+        };
+
+        await container.CreateItemAsync(
+            item,
+            new PartitionKey(item.LastName));
+
+        #region FeedResponse
+
+        using var iterator = container.GetItemLinqQueryable<Family>()
+            .Where(b => b.Id == item.Id)
+            .ToFeedIterator();
+        var feedResponse = await iterator.ReadNextAsync();
+        await Verifier.Verify(feedResponse);
+
         #endregion
     }
 }

@@ -12,7 +12,8 @@ Adds [Verify](https://github.com/VerifyTests/Verify) support to verify [Azure Co
 ## Contents
 
   * [Usage](#usage)
-    * [ItemResponse](#itemresponse)<!-- endToc -->
+    * [ItemResponse](#itemresponse)
+    * [FeedResponse](#feedresponse)<!-- endToc -->
 
 
 ## NuGet package
@@ -41,10 +42,10 @@ var response = await container.CreateItemAsync(
     new PartitionKey(item.LastName));
 await Verifier.Verify(response);
 ```
-<sup><a href='/src/Tests/Tests.cs#L51-L56' title='Snippet source file'>snippet source</a> | <a href='#snippet-itemresponse' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L54-L61' title='Snippet source file'>snippet source</a> | <a href='#snippet-itemresponse' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-Resulting in: 
+Resulting in:
 
 <!-- snippet: Tests.ItemResponse.verified.txt -->
 <a id='snippet-Tests.ItemResponse.verified.txt'></a>
@@ -67,6 +68,38 @@ Resulting in:
 }
 ```
 <sup><a href='/src/Tests/Tests.ItemResponse.verified.txt#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.ItemResponse.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+
+### FeedResponse
+
+A `FeedResponse` can be verified:
+
+<!-- snippet: FeedResponse -->
+<a id='snippet-feedresponse'></a>
+```cs
+using var iterator = container.GetItemLinqQueryable<Family>()
+    .Where(b => b.Id == item.Id)
+    .ToFeedIterator();
+var feedResponse = await iterator.ReadNextAsync();
+await Verifier.Verify(feedResponse);
+```
+<sup><a href='/src/Tests/Tests.cs#L87-L95' title='Snippet source file'>snippet source</a> | <a href='#snippet-feedresponse' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Resulting in:
+
+<!-- snippet: Tests.FeedResponse.verified.txt -->
+<a id='snippet-Tests.FeedResponse.verified.txt'></a>
+```txt
+{
+  RequestCharge: 2.83,
+  Count: 1,
+  Headers: {},
+  StatusCode: OK
+}
+```
+<sup><a href='/src/Tests/Tests.FeedResponse.verified.txt#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.FeedResponse.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

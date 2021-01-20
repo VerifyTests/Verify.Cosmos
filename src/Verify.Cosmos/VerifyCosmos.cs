@@ -9,13 +9,13 @@ namespace VerifyTests
             VerifierSettings.ModifySerialization(settings =>
             {
                 settings.IgnoreMembers("ETag");
-                settings.IgnoreMember<Database>(x=>x.Client);
+                settings.IgnoreMember<Database>(x => x.Client);
                 settings.IgnoreMembersWithType<DatabaseProperties>();
-                //settings.IgnoreMembersWithType<CosmosClientOptions>();
                 settings.AddExtraSettings(serializerSettings =>
                 {
                     var converters = serializerSettings.Converters;
                     converters.Add(new HeadersConverter());
+                    converters.Add(new FeedResponseConverter());
                 });
             });
         }

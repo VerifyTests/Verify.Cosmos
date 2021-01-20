@@ -1,10 +1,9 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 public class Family
 {
     [JsonProperty(PropertyName = "id")]
-    public Guid Id { get; set; }
+    public string Id { get; set; } = null!;
     public string LastName { get; set; } = null!;
     public Address Address { get; set; } = null!;
 
