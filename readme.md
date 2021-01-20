@@ -22,7 +22,7 @@ https://nuget.org/packages/Verify.Cosmos/
 
 ## Usage
 
-Before any test have run call:
+Before any tests have run call:
 
 ```
 VerifyCosmos.Enable();
