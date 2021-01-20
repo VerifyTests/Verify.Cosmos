@@ -1,0 +1,10 @@
+{
+  Database: {
+    Id: db
+  },
+  Headers: {},
+  StatusCode: OK,
+  Diagnostics: {},
+  RequestCharge: 2.0,
+  ActivityId: Guid_1
+}

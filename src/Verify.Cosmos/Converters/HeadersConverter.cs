@@ -20,9 +20,11 @@ class HeadersConverter :
             {
                 continue;
             }
+
             writer.WritePropertyName(key);
             serializer.Serialize(writer, headers.GetValueOrDefault(key));
         }
+
         writer.WriteEndObject();
     }
 }

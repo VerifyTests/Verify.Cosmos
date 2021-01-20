@@ -1,4 +1,6 @@
-﻿namespace VerifyTests
+﻿using Microsoft.Azure.Cosmos;
+
+namespace VerifyTests
 {
     public static class VerifyCosmos
     {
@@ -7,6 +9,9 @@
             VerifierSettings.ModifySerialization(settings =>
             {
                 settings.IgnoreMembers("ETag");
+                settings.IgnoreMember<Database>(x=>x.Client);
+                settings.IgnoreMembersWithType<DatabaseProperties>();
+                //settings.IgnoreMembersWithType<CosmosClientOptions>();
                 settings.AddExtraSettings(serializerSettings =>
                 {
                     var converters = serializerSettings.Converters;

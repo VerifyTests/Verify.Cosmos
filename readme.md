@@ -11,7 +11,8 @@ Adds [Verify](https://github.com/VerifyTests/Verify) support to verify [Azure Co
 <!-- toc -->
 ## Contents
 
-  * [Usage](#usage)<!-- endToc -->
+  * [Usage](#usage)
+    * [ItemResponse](#itemresponse)<!-- endToc -->
 
 
 ## NuGet package
@@ -26,6 +27,47 @@ Before any test have run call:
 ```
 VerifyCosmos.Enable();
 ```
+
+
+### ItemResponse
+
+A `ItemResponse` can be verified:
+
+<!-- snippet: ItemResponse -->
+<a id='snippet-itemresponse'></a>
+```cs
+var response = await container.CreateItemAsync(
+    item,
+    new PartitionKey(item.LastName));
+await Verifier.Verify(response);
+```
+<sup><a href='/src/Tests/Tests.cs#L51-L56' title='Snippet source file'>snippet source</a> | <a href='#snippet-itemresponse' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
+
+Resulting in: 
+
+<!-- snippet: Tests.ItemResponse.verified.txt -->
+<a id='snippet-Tests.ItemResponse.verified.txt'></a>
+```txt
+{
+  Headers: {},
+  Resource: {
+    id: Guid_1,
+    LastName: Andersen,
+    Address: {
+      State: WA,
+      County: King,
+      City: Seattle
+    }
+  },
+  StatusCode: Created,
+  Diagnostics: {},
+  RequestCharge: 7.43,
+  ActivityId: Guid_2
+}
+```
+<sup><a href='/src/Tests/Tests.ItemResponse.verified.txt#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.ItemResponse.verified.txt' title='Start of snippet'>anchor</a></sup>
+<!-- endSnippet -->
 
 
 ## Icon

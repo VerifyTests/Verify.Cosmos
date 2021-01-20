@@ -1,0 +1,10 @@
+{
+  Id: items,
+  Database: {
+    Id: db
+  },
+  LinkUri: dbs/db/colls/items,
+  ClientContext: {},
+  Conflicts: {},
+  Scripts: {}
+}
