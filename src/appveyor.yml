@@ -3,8 +3,11 @@ skip_commits:
   message: /docs|Merge pull request.*/
 
 install:
-- ps: Set-Content -Value '"C:\Program Files\Azure Cosmos DB Emulator\CosmosDB.Emulator.exe" /NoUI /NoExplorer /NoFirewall' -Path .\startCosmosDb.cmd
-- ps: Start-Process -FilePath .\startCosmosDb.cmd
+  - ps: |
+      Set-Content -Value '"C:\Program Files\Azure Cosmos DB Emulator\CosmosDB.Emulator.exe" /NoUI /NoExplorer /NoFirewall' -Path .\startCosmosDb.cmd
+      Start-Process -FilePath .\startCosmosDb.cmd
+      .\waitforport.ps1 -port 8081 -maxAttempts 4
+
 build_script:
 - ps: >-
     dotnet build src --configuration Release
