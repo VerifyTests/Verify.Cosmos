@@ -16,17 +16,15 @@
     x-ms-xp-role,
     x-ms-global-Committed-lsn,
     x-ms-number-of-read-regions,
-    x-ms-item-lsn,
     x-ms-transport-request-id,
     x-ms-cosmos-llsn,
     x-ms-cosmos-quorum-acked-llsn,
-    x-ms-cosmos-item-llsn,
     x-ms-session-token,
     x-ms-request-duration-ms,
     x-ms-serviceversion
   ],
   Resource: {
-    id: Andersen.1,
+    id: Guid_1,
     LastName: Andersen,
     Parents: [
       {
@@ -54,9 +52,8 @@
       City: Seattle
     }
   },
-  StatusCode: OK,
+  StatusCode: Created,
   Diagnostics: {},
-  RequestCharge: 1.0,
-  ActivityId: Guid_1,
-  ETag: "00000000-0000-0000-ef0a-13a4dcbd01d6"
+  RequestCharge: 12.57,
+  ActivityId: Guid_2
 }

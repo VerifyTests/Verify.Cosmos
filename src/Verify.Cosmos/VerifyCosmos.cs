@@ -6,7 +6,7 @@
         {
             VerifierSettings.ModifySerialization(settings =>
             {
- //               settings.IgnoreMembersWithType<IBuilder>();
+                settings.IgnoreMembers("ETag");
                 settings.AddExtraSettings(serializerSettings =>
                 {
                     //var converters = serializerSettings.Converters;

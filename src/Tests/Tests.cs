@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Azure.Cosmos;
 using VerifyXunit;
 using Xunit;
@@ -7,7 +8,7 @@ using Xunit;
 public class Tests
 {
     [Fact]
-    public async Task Simple()
+    public async Task CreateItem()
     {
         var client = new CosmosClient(
             "https://localhost:8081",
@@ -23,7 +24,7 @@ public class Tests
 
         Family family = new()
         {
-            Id = "Andersen.1",
+            Id = Guid.NewGuid(),
             LastName = "Andersen",
             Parents = new Parent[]
             {
@@ -52,8 +53,7 @@ public class Tests
             IsRegistered = false
         };
 
-        // Read the item to see if it exists.
-        var response = await container.ReadItemAsync<Family>(family.Id, new PartitionKey(family.LastName));
+        ItemResponse<Family>? response = await container.CreateItemAsync(family, new PartitionKey(family.LastName));
 
         await Verifier.Verify(response);
     }
