@@ -26,26 +26,6 @@
   Resource: {
     id: Guid_1,
     LastName: Andersen,
-    Parents: [
-      {
-        FirstName: Thomas
-      },
-      {
-        FirstName: Mary Kay
-      }
-    ],
-    Children: [
-      {
-        FirstName: Henriette Thaulow,
-        Gender: female,
-        Grade: 5,
-        Pets: [
-          {
-            GivenName: Fluffy
-          }
-        ]
-      }
-    ],
     Address: {
       State: WA,
       County: King,
@@ -54,6 +34,6 @@
   },
   StatusCode: Created,
   Diagnostics: {},
-  RequestCharge: 12.57,
+  RequestCharge: 7.43,
   ActivityId: Guid_2
 }

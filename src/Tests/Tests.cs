@@ -26,31 +26,12 @@ public class Tests
         {
             Id = Guid.NewGuid(),
             LastName = "Andersen",
-            Parents = new Parent[]
-            {
-                new(){ FirstName = "Thomas" },
-                new(){ FirstName = "Mary Kay" }
-            },
-            Children = new Child[]
-            {
-                new()
-                {
-                    FirstName = "Henriette Thaulow",
-                    Gender = "female",
-                    Grade = 5,
-                    Pets = new Pet[]
-                    {
-                        new(){ GivenName = "Fluffy" }
-                    }
-                }
-            },
             Address = new Address
             {
                 State = "WA",
                 County = "King",
                 City = "Seattle"
-            },
-            IsRegistered = false
+            }
         };
 
         ItemResponse<Family>? response = await container.CreateItemAsync(family, new PartitionKey(family.LastName));
