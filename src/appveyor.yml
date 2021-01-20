@@ -1,6 +1,10 @@
 image: Visual Studio 2019
 skip_commits:
   message: /docs|Merge pull request.*/
+
+install:
+- ps: Set-Content -Value '"C:\Program Files\Azure Cosmos DB Emulator\CosmosDB.Emulator.exe" /NoUI /NoExplorer /NoFirewall' -Path .\startCosmosDb.cmd
+- ps: Start-Process -FilePath .\startCosmosDb.cmd
 build_script:
 - ps: >-
     dotnet build src --configuration Release
