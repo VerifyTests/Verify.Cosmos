@@ -24,6 +24,8 @@ class FeedResponseConverter :
         serializer.Serialize(writer, o!.Headers);
         writer.WritePropertyName("StatusCode");
         serializer.Serialize(writer, o!.StatusCode);
+        writer.WritePropertyName("Resource");
+        serializer.Serialize(writer, o!.Resource);
         writer.WriteEndObject();
     }
 

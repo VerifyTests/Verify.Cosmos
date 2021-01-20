@@ -96,10 +96,21 @@ Resulting in:
   RequestCharge: 2.83,
   Count: 1,
   Headers: {},
-  StatusCode: OK
+  StatusCode: OK,
+  Resource: [
+    {
+      id: Guid_1,
+      LastName: Andersen,
+      Address: {
+        State: WA,
+        County: King,
+        City: Seattle
+      }
+    }
+  ]
 }
 ```
-<sup><a href='/src/Tests/Tests.FeedResponse.verified.txt#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.FeedResponse.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.FeedResponse.verified.txt#L1-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.FeedResponse.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
