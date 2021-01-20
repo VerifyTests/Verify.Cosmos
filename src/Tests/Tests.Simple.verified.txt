@@ -1,0 +1,62 @@
+{
+  Headers: [
+    x-ms-activity-id,
+    x-ms-last-state-change-utc,
+    etag,
+    x-ms-resource-quota,
+    x-ms-resource-usage,
+    x-ms-schemaversion,
+    lsn,
+    x-ms-request-charge,
+    x-ms-alt-content-path,
+    x-ms-content-path,
+    x-ms-quorum-acked-lsn,
+    x-ms-current-write-quorum,
+    x-ms-current-replica-set-size,
+    x-ms-xp-role,
+    x-ms-global-Committed-lsn,
+    x-ms-number-of-read-regions,
+    x-ms-item-lsn,
+    x-ms-transport-request-id,
+    x-ms-cosmos-llsn,
+    x-ms-cosmos-quorum-acked-llsn,
+    x-ms-cosmos-item-llsn,
+    x-ms-session-token,
+    x-ms-request-duration-ms,
+    x-ms-serviceversion
+  ],
+  Resource: {
+    id: Andersen.1,
+    LastName: Andersen,
+    Parents: [
+      {
+        FirstName: Thomas
+      },
+      {
+        FirstName: Mary Kay
+      }
+    ],
+    Children: [
+      {
+        FirstName: Henriette Thaulow,
+        Gender: female,
+        Grade: 5,
+        Pets: [
+          {
+            GivenName: Fluffy
+          }
+        ]
+      }
+    ],
+    Address: {
+      State: WA,
+      County: King,
+      City: Seattle
+    }
+  },
+  StatusCode: OK,
+  Diagnostics: {},
+  RequestCharge: 1.0,
+  ActivityId: Guid_1,
+  ETag: "00000000-0000-0000-ef0a-13a4dcbd01d6"
+}
