@@ -35,7 +35,7 @@ public class Tests
         };
 
         ItemResponse<Family>? response = await container.CreateItemAsync(family, new PartitionKey(family.LastName));
-
+        Headers? responseHeaders = response.Headers;
         await Verifier.Verify(response);
     }
 }

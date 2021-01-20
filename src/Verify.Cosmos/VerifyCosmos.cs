@@ -9,7 +9,8 @@
                 settings.IgnoreMembers("ETag");
                 settings.AddExtraSettings(serializerSettings =>
                 {
-                    //var converters = serializerSettings.Converters;
+                    var converters = serializerSettings.Converters;
+                    converters.Add(new HeadersConverter());
                 });
             });
         }
