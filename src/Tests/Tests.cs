@@ -25,10 +25,10 @@ public class Tests
     }
 
     [Fact]
-    public async Task CreateContainer()
+    public async Task ContainerResponse()
     {
         Database database = await client.CreateDatabaseIfNotExistsAsync("db");
-        Container container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
+        var container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
         await Verifier.Verify(container);
     }
 

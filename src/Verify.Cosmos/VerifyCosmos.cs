@@ -10,6 +10,8 @@ namespace VerifyTests
             {
                 settings.IgnoreMembers("ETag");
                 settings.IgnoreMember<Database>(x => x.Client);
+                settings.IgnoreMembersWithType<IndexingPolicy>();
+                settings.IgnoreMember<ContainerProperties>(x => x.ETag);
                 settings.IgnoreMembersWithType<DatabaseProperties>();
                 settings.AddExtraSettings(serializerSettings =>
                 {

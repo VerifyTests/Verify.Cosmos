@@ -15,17 +15,17 @@ class FeedResponseConverter :
         }
 
         writer.WriteStartObject();
-        var o = (dynamic)response;
+        var o = (dynamic)response!;
         writer.WritePropertyName("RequestCharge");
-        serializer.Serialize(writer, o!.RequestCharge);
+        serializer.Serialize(writer, o.RequestCharge);
         writer.WritePropertyName("Count");
-        serializer.Serialize(writer, o!.Count);
+        serializer.Serialize(writer, o.Count);
         writer.WritePropertyName("Headers");
-        serializer.Serialize(writer, o!.Headers);
+        serializer.Serialize(writer, o.Headers);
         writer.WritePropertyName("StatusCode");
-        serializer.Serialize(writer, o!.StatusCode);
+        serializer.Serialize(writer, o.StatusCode);
         writer.WritePropertyName("Resource");
-        serializer.Serialize(writer, o!.Resource);
+        serializer.Serialize(writer, o.Resource);
         writer.WriteEndObject();
     }
 

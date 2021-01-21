@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Azure.Cosmos;
 using Newtonsoft.Json;
 using VerifyTests;
@@ -16,7 +17,10 @@ class HeadersConverter :
         writer.WriteStartObject();
         foreach (var key in headers.AllKeys())
         {
-            if (key.StartsWith("x-ms-") || key == "etag" || key == "lsn")
+            if (key.StartsWith("x-ms-") ||
+                string.Equals(key, "etag", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(key, "date", StringComparison.OrdinalIgnoreCase) ||
+                key == "lsn")
             {
                 continue;
             }
