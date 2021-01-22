@@ -21,22 +21,6 @@
     Content-Type: application/json,
     Content-Location: https://127.0.0.1:8081/dbs/db/colls/items
   },
-  Resource: {
-    geospatialConfig: {},
-    conflictResolutionPolicy: {
-      conflictResolutionPath: /_ts,
-      conflictResolutionProcedure: 
-    },
-    id: items,
-    _ts: 1611132959,
-    _self: dbs/65VYAA==/colls/65VYAMrOfik=/,
-    partitionKey: {
-      paths: [
-        /LastName
-      ]
-    },
-    _rid: 65VYAMrOfik=
-  },
   StatusCode: OK,
   Diagnostics: {},
   RequestCharge: 1.0,
