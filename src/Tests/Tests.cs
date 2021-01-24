@@ -18,7 +18,7 @@ public class Tests
         });
 
     [Fact]
-    public async Task CreateDatabase()
+    public async Task DatabaseResponse()
     {
         var database = await client.CreateDatabaseIfNotExistsAsync("db");
         await Verifier.Verify(database);
@@ -50,7 +50,6 @@ public class Tests
                 City = "Seattle"
             }
         };
-
         #region ItemResponse
 
         var response = await container.CreateItemAsync(
