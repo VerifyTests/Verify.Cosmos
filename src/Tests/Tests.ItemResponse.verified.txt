@@ -1,5 +1,7 @@
 {
+  RequestCharge: 7.43,
   Headers: {},
+  StatusCode: Created,
   Resource: {
     id: Guid_1,
     LastName: Andersen,
@@ -8,9 +10,5 @@
       County: King,
       City: Seattle
     }
-  },
-  StatusCode: Created,
-  Diagnostics: {},
-  RequestCharge: 7.43,
-  ActivityId: Guid_2
+  }
 }

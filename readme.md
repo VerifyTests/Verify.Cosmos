@@ -51,7 +51,9 @@ Resulting in:
 <a id='snippet-Tests.ItemResponse.verified.txt'></a>
 ```txt
 {
+  RequestCharge: 7.43,
   Headers: {},
+  StatusCode: Created,
   Resource: {
     id: Guid_1,
     LastName: Andersen,
@@ -60,14 +62,10 @@ Resulting in:
       County: King,
       City: Seattle
     }
-  },
-  StatusCode: Created,
-  Diagnostics: {},
-  RequestCharge: 7.43,
-  ActivityId: Guid_2
+  }
 }
 ```
-<sup><a href='/src/Tests/Tests.ItemResponse.verified.txt#L1-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.ItemResponse.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.ItemResponse.verified.txt#L1-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.ItemResponse.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

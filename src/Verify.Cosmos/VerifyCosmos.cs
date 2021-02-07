@@ -18,6 +18,7 @@ namespace VerifyTests
                     var converters = serializerSettings.Converters;
                     converters.Add(new HeadersConverter());
                     converters.Add(new FeedResponseConverter());
+                    converters.Add(new ResponseConverter());
                 });
             });
         }
