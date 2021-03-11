@@ -10,6 +10,7 @@ namespace VerifyTests
             {
                 settings.IgnoreMembers("ETag");
                 settings.IgnoreMember<Database>(x => x.Client);
+                settings.IgnoreMembersWithType<CosmosDiagnostics>();
                 settings.IgnoreMembersWithType<IndexingPolicy>();
                 settings.IgnoreMember<ContainerResponse>(x => x.Resource);
                 settings.IgnoreMembersWithType<DatabaseProperties>();
