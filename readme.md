@@ -6,16 +6,6 @@
 Adds [Verify](https://github.com/VerifyTests/Verify) support to verify [Azure CosmosDB](https://docs.microsoft.com/en-us/azure/cosmos-db/).
 
 
-
-
-<!-- toc -->
-## Contents
-
-  * [Usage](#usage)
-    * [ItemResponse](#itemresponse)
-    * [FeedResponse](#feedresponse)<!-- endToc -->
-
-
 ## NuGet package
 
 https://nuget.org/packages/Verify.Cosmos/
