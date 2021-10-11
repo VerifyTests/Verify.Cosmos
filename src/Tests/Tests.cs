@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Azure.Cosmos;
+﻿using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Linq;
 using VerifyXunit;
 using Xunit;
@@ -12,7 +9,7 @@ public class Tests
     static CosmosClient client = new(
         "https://localhost:8081",
         "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
-        new CosmosClientOptions
+        new()
         {
             ApplicationName = "Verify.Cosmos"
         });
@@ -39,11 +36,11 @@ public class Tests
 
         Container container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
 
-        Family item = new()
+        var item = new Family
         {
             Id = Guid.NewGuid().ToString(),
             LastName = "Andersen",
-            Address = new Address
+            Address = new()
             {
                 State = "WA",
                 County = "King",
@@ -67,11 +64,11 @@ public class Tests
 
         Container container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
 
-        Family item = new()
+        var item = new Family
         {
             Id = Guid.NewGuid().ToString(),
             LastName = "Andersen",
-            Address = new Address
+            Address = new()
             {
                 State = "WA",
                 County = "King",

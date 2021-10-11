@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Azure.Cosmos;
+﻿using Microsoft.Azure.Cosmos;
 using Newtonsoft.Json;
 using VerifyTests;
 
 class ResponseConverter :
     WriteOnlyJsonConverter
 {
-    public override void WriteJson(JsonWriter writer, object? response, JsonSerializer serializer, IReadOnlyDictionary<string, object> context)
+    public override void WriteJson(JsonWriter writer, object response, JsonSerializer serializer, IReadOnlyDictionary<string, object> context)
     {
-        if (response == null)
-        {
-            return;
-        }
-
         writer.WriteStartObject();
-        var o = (dynamic)response!;
+        var o = (dynamic)response;
         writer.WritePropertyName("RequestCharge");
         serializer.Serialize(writer, o.RequestCharge);
         writer.WritePropertyName("Headers");

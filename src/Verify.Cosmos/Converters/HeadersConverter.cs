@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Azure.Cosmos;
+﻿using Microsoft.Azure.Cosmos;
 using Newtonsoft.Json;
 using VerifyTests;
 
 class HeadersConverter :
     WriteOnlyJsonConverter<Headers>
 {
-    public override void WriteJson(JsonWriter writer, Headers? headers, JsonSerializer serializer, IReadOnlyDictionary<string, object> context)
+    public override void WriteJson(JsonWriter writer, Headers headers, JsonSerializer serializer, IReadOnlyDictionary<string, object> context)
     {
-        if (headers == null)
-        {
-            return;
-        }
-
         writer.WriteStartObject();
         foreach (var key in headers.AllKeys())
         {
