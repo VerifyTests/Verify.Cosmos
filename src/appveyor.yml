@@ -1,6 +1,4 @@
 image: Visual Studio 2022
-skip_commits:
-  message: /doco|Merge pull request.*/
 install:
   - ps: |
       Set-Content -Value '"C:\Program Files\Azure Cosmos DB Emulator\CosmosDB.Emulator.exe" /NoUI /NoExplorer /NoFirewall' -Path .\startCosmosDb.cmd
