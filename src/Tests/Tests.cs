@@ -18,7 +18,7 @@ public class Tests
     public async Task DatabaseResponse()
     {
         var database = await client.CreateDatabaseIfNotExistsAsync("db");
-        await Verifier.Verify(database);
+        await Verify(database);
     }
 
     [Fact]
@@ -26,7 +26,7 @@ public class Tests
     {
         Database database = await client.CreateDatabaseIfNotExistsAsync("db");
         var container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
-        await Verifier.Verify(container);
+        await Verify(container);
     }
 
     [Fact]
@@ -52,7 +52,7 @@ public class Tests
         var response = await container.CreateItemAsync(
             item,
             new PartitionKey(item.LastName));
-        await Verifier.Verify(response);
+        await Verify(response);
 
         #endregion
     }
@@ -86,7 +86,7 @@ public class Tests
             .Where(b => b.Id == item.Id)
             .ToFeedIterator();
         var feedResponse = await iterator.ReadNextAsync();
-        await Verifier.Verify(feedResponse);
+        await Verify(feedResponse);
 
         #endregion
     }
