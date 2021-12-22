@@ -30,7 +30,7 @@ A `ItemResponse` can be verified:
 var response = await container.CreateItemAsync(
     item,
     new PartitionKey(item.LastName));
-await Verifier.Verify(response);
+await Verify(response);
 ```
 <sup><a href='/src/Tests/Tests.cs#L50-L57' title='Snippet source file'>snippet source</a> | <a href='#snippet-itemresponse' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
@@ -70,7 +70,7 @@ using var iterator = container.GetItemLinqQueryable<Family>()
     .Where(b => b.Id == item.Id)
     .ToFeedIterator();
 var feedResponse = await iterator.ReadNextAsync();
-await Verifier.Verify(feedResponse);
+await Verify(feedResponse);
 ```
 <sup><a href='/src/Tests/Tests.cs#L83-L91' title='Snippet source file'>snippet source</a> | <a href='#snippet-feedresponse' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
