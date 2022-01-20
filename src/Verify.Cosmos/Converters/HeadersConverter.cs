@@ -1,11 +1,10 @@
 ﻿using Microsoft.Azure.Cosmos;
 using Newtonsoft.Json;
-using VerifyTests;
 
 class HeadersConverter :
     WriteOnlyJsonConverter<Headers>
 {
-    public override void WriteJson(JsonWriter writer, Headers headers, JsonSerializer serializer, IReadOnlyDictionary<string, object> context)
+    public override void Write(VerifyJsonWriter writer, Headers headers, JsonSerializer serializer)
     {
         writer.WriteStartObject();
         foreach (var key in headers.AllKeys())

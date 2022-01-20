@@ -1,11 +1,10 @@
 ﻿using Microsoft.Azure.Cosmos;
 using Newtonsoft.Json;
-using VerifyTests;
 
 class ResponseConverter :
     WriteOnlyJsonConverter
 {
-    public override void WriteJson(JsonWriter writer, object response, JsonSerializer serializer, IReadOnlyDictionary<string, object> context)
+    public override void Write(VerifyJsonWriter writer, object response, JsonSerializer serializer)
     {
         writer.WriteStartObject();
         var o = (dynamic)response;
