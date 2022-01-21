@@ -1,10 +1,9 @@
 ﻿using Microsoft.Azure.Cosmos;
-using Newtonsoft.Json;
 
 class HeadersConverter :
     WriteOnlyJsonConverter<Headers>
 {
-    public override void Write(VerifyJsonWriter writer, Headers headers, JsonSerializer serializer)
+    public override void Write(VerifyJsonWriter writer, Headers headers)
     {
         writer.WriteStartObject();
         foreach (var key in headers.AllKeys())
@@ -17,8 +16,7 @@ class HeadersConverter :
                 continue;
             }
 
-            writer.WritePropertyName(key);
-            serializer.Serialize(writer, headers.GetValueOrDefault(key));
+            writer.WriteProperty(headers, headers.GetValueOrDefault(key), key);
         }
 
         writer.WriteEndObject();

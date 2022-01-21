@@ -1,21 +1,16 @@
 ﻿using Microsoft.Azure.Cosmos;
-using Newtonsoft.Json;
 
 class ResponseConverter :
     WriteOnlyJsonConverter
 {
-    public override void Write(VerifyJsonWriter writer, object response, JsonSerializer serializer)
+    public override void Write(VerifyJsonWriter writer, object response)
     {
         writer.WriteStartObject();
-        var o = (dynamic)response;
-        writer.WritePropertyName("RequestCharge");
-        serializer.Serialize(writer, o.RequestCharge);
-        writer.WritePropertyName("Headers");
-        serializer.Serialize(writer, o.Headers);
-        writer.WritePropertyName("StatusCode");
-        serializer.Serialize(writer, o.StatusCode);
-        writer.WritePropertyName("Resource");
-        serializer.Serialize(writer, o.Resource);
+        var o = (dynamic) response;
+        writer.WriteProperty(o, o.RequestCharge, "RequestCharge");
+        writer.WriteProperty(o, o.Headers, "Headers");
+        writer.WriteProperty(o, o.StatusCode, "StatusCode");
+        writer.WriteProperty(o, o.Resource, "Resource");
         writer.WriteEndObject();
     }
 
