@@ -7,10 +7,8 @@ public class Family
     public string LastName { get; set; } = null!;
     public Address Address { get; set; } = null!;
 
-    public override string ToString()
-    {
-        return JsonConvert.SerializeObject(this);
-    }
+    public override string ToString() =>
+        JsonConvert.SerializeObject(this);
 }
 
 public class Address

@@ -4,8 +4,7 @@ namespace VerifyTests;
 
 public static class VerifyCosmos
 {
-    public static void Enable()
-    {
+    public static void Enable() =>
         VerifierSettings.ModifySerialization(settings =>
         {
             settings.IgnoreMembers("ETag");
@@ -22,5 +21,4 @@ public static class VerifyCosmos
                 converters.Add(new ResponseConverter());
             });
         });
-    }
 }
