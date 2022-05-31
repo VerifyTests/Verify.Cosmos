@@ -4,21 +4,20 @@ namespace VerifyTests;
 
 public static class VerifyCosmos
 {
-    public static void Enable() =>
-        VerifierSettings.ModifySerialization(settings =>
+    public static void Enable()
+    {
+        VerifierSettings.IgnoreMembers("ETag");
+        VerifierSettings.IgnoreMember<Database>(x => x.Client);
+        VerifierSettings.IgnoreMembersWithType<CosmosDiagnostics>();
+        VerifierSettings.IgnoreMembersWithType<IndexingPolicy>();
+        VerifierSettings.IgnoreMembersWithType<ContainerProperties>();
+        VerifierSettings.IgnoreMembersWithType<DatabaseProperties>();
+        VerifierSettings.AddExtraSettings(serializerSettings =>
         {
-            settings.IgnoreMembers("ETag");
-            settings.IgnoreMember<Database>(x => x.Client);
-            settings.IgnoreMembersWithType<CosmosDiagnostics>();
-            settings.IgnoreMembersWithType<IndexingPolicy>();
-            settings.IgnoreMember<ContainerResponse>(x => x.Resource);
-            settings.IgnoreMembersWithType<DatabaseProperties>();
-            settings.AddExtraSettings(serializerSettings =>
-            {
-                var converters = serializerSettings.Converters;
-                converters.Add(new HeadersConverter());
-                converters.Add(new FeedResponseConverter());
-                converters.Add(new ResponseConverter());
-            });
+            var converters = serializerSettings.Converters;
+            converters.Add(new HeadersConverter());
+            converters.Add(new FeedResponseConverter());
+            converters.Add(new ResponseConverter());
         });
+    }
 }
