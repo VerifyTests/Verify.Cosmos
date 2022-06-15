@@ -81,7 +81,7 @@ Resulting in:
 <a id='snippet-Tests.FeedResponse.verified.txt'></a>
 ```txt
 {
-  RequestCharge: 2.83,
+  RequestCharge: 2.8,
   Count: 1,
   Headers: {},
   StatusCode: OK,
