@@ -1,5 +1,5 @@
-{
-  RequestCharge: 7.43,
+﻿{
+  RequestCharge: 7.4,
   Headers: {},
   StatusCode: Created,
   Resource: {

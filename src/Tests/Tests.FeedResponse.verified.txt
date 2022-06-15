@@ -1,5 +1,5 @@
-{
-  RequestCharge: 2.83,
+﻿{
+  RequestCharge: 2.8,
   Count: 1,
   Headers: {},
   StatusCode: OK,

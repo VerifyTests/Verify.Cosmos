@@ -41,7 +41,7 @@ Resulting in:
 <a id='snippet-Tests.ItemResponse.verified.txt'></a>
 ```txt
 {
-  RequestCharge: 7.43,
+  RequestCharge: 7.4,
   Headers: {},
   StatusCode: Created,
   Resource: {

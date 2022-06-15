@@ -4,6 +4,12 @@ namespace VerifyTests;
 
 public static class VerifyCosmos
 {
+    internal static double RoundRequestCharge(dynamic o)
+    {
+        var requestCharge = (double) o.RequestCharge;
+        return Math.Round(requestCharge, 1);
+    }
+
     public static void Enable()
     {
         VerifierSettings.IgnoreMembers("ETag");

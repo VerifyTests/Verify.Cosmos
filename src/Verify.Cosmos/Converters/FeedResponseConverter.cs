@@ -7,7 +7,7 @@ class FeedResponseConverter :
     {
         writer.WriteStartObject();
         var o = (dynamic) response;
-        writer.WriteProperty(response, o.RequestCharge, "RequestCharge");
+        writer.WriteProperty(response, VerifyCosmos.RoundRequestCharge(o), "RequestCharge");
         writer.WriteProperty(response, o.Count, "Count");
         writer.WriteProperty(response, o.Headers, "Headers");
         writer.WriteProperty(response, o.StatusCode, "StatusCode");
