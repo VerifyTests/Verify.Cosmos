@@ -16,7 +16,7 @@ class HeadersConverter :
                 continue;
             }
 
-            writer.WriteProperty(headers, headers.GetValueOrDefault(key), key);
+            writer.WriteMember(headers, headers.GetValueOrDefault(key), key);
         }
 
         writer.WriteEndObject();
