@@ -7,11 +7,11 @@ class FeedResponseConverter :
     {
         writer.WriteStartObject();
         var o = (dynamic) response;
-        writer.WriteProperty(response, VerifyCosmos.RoundRequestCharge(o), "RequestCharge");
-        writer.WriteProperty(response, o.Count, "Count");
-        writer.WriteProperty(response, o.Headers, "Headers");
-        writer.WriteProperty(response, o.StatusCode, "StatusCode");
-        writer.WriteProperty(response, o.Resource, "Resource");
+        writer.WriteMember(response, VerifyCosmos.RoundRequestCharge(o), "RequestCharge");
+        writer.WriteMember(response, o.Count, "Count");
+        writer.WriteMember(response, o.Headers, "Headers");
+        writer.WriteMember(response, o.StatusCode, "StatusCode");
+        writer.WriteMember(response, o.Resource, "Resource");
         writer.WriteEndObject();
     }
 

@@ -7,10 +7,10 @@ class ResponseConverter :
     {
         writer.WriteStartObject();
         var o = (dynamic) response;
-        writer.WriteProperty(o, VerifyCosmos.RoundRequestCharge(o), "RequestCharge");
-        writer.WriteProperty(o, o.Headers, "Headers");
-        writer.WriteProperty(o, o.StatusCode, "StatusCode");
-        writer.WriteProperty(o, o.Resource, "Resource");
+        writer.WriteMember(o, VerifyCosmos.RoundRequestCharge(o), "RequestCharge");
+        writer.WriteMember(o, o.Headers, "Headers");
+        writer.WriteMember(o, o.StatusCode, "StatusCode");
+        writer.WriteMember(o, o.Resource, "Resource");
         writer.WriteEndObject();
     }
 
