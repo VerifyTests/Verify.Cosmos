@@ -45,7 +45,7 @@ Resulting in:
   Headers: {},
   StatusCode: Created,
   Resource: {
-    id: Guid_1,
+    Id: Guid_1,
     LastName: Andersen,
     Address: {
       State: WA,
@@ -87,7 +87,7 @@ Resulting in:
   StatusCode: OK,
   Resource: [
     {
-      id: Guid_1,
+      Id: Guid_1,
       LastName: Andersen,
       Address: {
         State: WA,
