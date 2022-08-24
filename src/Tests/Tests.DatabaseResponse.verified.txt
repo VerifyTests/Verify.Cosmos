@@ -1,4 +1,4 @@
-{
+﻿{
   Database: {
     Id: db
   },

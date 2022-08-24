@@ -1,4 +1,4 @@
-{
+﻿{
   Container: {
     Id: items,
     Database: {
