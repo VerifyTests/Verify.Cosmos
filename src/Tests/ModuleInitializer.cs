@@ -4,11 +4,11 @@
 
     [ModuleInitializer]
     public static void Init() =>
-        VerifyCosmos.Enable();
+        VerifyCosmos.Initialize();
 
     #endregion
 
     [ModuleInitializer]
     public static void InitOther() =>
-        VerifyDiffPlex.Initialize();
+        VerifierSettings.InitializePlugins();
 }
