@@ -17,21 +17,22 @@ class FeedResponseConverter :
 
     public override bool CanConvert(Type type)
     {
+        Type? current= type;
         do
         {
-            if (!type.IsGenericType)
+            if (!current.IsGenericType)
             {
                 return false;
             }
 
-            var definition = type.GetGenericTypeDefinition();
+            var definition = current.GetGenericTypeDefinition();
             if (definition == typeof(FeedResponse<>))
             {
                 return true;
             }
 
-            type = type.BaseType;
-        } while (type != null);
+            current = current.BaseType;
+        } while (current != null);
 
         return false;
     }
