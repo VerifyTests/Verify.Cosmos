@@ -27,7 +27,7 @@ public static class VerifyCosmos
 
         InnerVerifier.ThrowIfVerifyHasBeenRun();
         VerifierSettings.IgnoreMembers("ETag");
-        VerifierSettings.IgnoreMember<Database>(x => x.Client);
+        VerifierSettings.IgnoreMember<Database>(_ => _.Client);
         VerifierSettings.IgnoreMembersWithType<CosmosDiagnostics>();
         VerifierSettings.IgnoreMembersWithType<IndexingPolicy>();
         VerifierSettings.IgnoreMembersWithType<ContainerProperties>();
