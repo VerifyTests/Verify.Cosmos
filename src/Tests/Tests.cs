@@ -1,7 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Linq;
 
-[UsesVerify]
 public class Tests
 {
     static CosmosClient client = new(
