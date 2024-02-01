@@ -17,7 +17,7 @@ class FeedResponseConverter :
 
     public override bool CanConvert(Type type)
     {
-        Type? current= type;
+        var current= type;
         do
         {
             if (!current.IsGenericType)
