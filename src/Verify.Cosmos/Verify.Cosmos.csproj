@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Verify" Version="23.2.3" />
+    <PackageReference Include="Verify" Version="23.3.0" />
     <PackageReference Include="ProjectDefaults" Version="1.0.125" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.38.1" />
   </ItemGroup>
