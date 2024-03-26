@@ -31,14 +31,14 @@ public static void Init() =>
 A `ItemResponse` can be verified:
 
 <!-- snippet: ItemResponse -->
-<a id='snippet-itemresponse'></a>
+<a id='snippet-ItemResponse'></a>
 ```cs
 var response = await container.CreateItemAsync(
     item,
     new PartitionKey(item.LastName));
 await Verify(response);
 ```
-<sup><a href='/src/Tests/Tests.cs#L47-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-itemresponse' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L47-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-ItemResponse' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Resulting in:
@@ -70,7 +70,7 @@ Resulting in:
 A `FeedResponse` can be verified:
 
 <!-- snippet: FeedResponse -->
-<a id='snippet-feedresponse'></a>
+<a id='snippet-FeedResponse'></a>
 ```cs
 using var iterator = container.GetItemLinqQueryable<Family>()
     .Where(b => b.Id == item.Id)
@@ -78,7 +78,7 @@ using var iterator = container.GetItemLinqQueryable<Family>()
 var feedResponse = await iterator.ReadNextAsync();
 await Verify(feedResponse);
 ```
-<sup><a href='/src/Tests/Tests.cs#L80-L88' title='Snippet source file'>snippet source</a> | <a href='#snippet-feedresponse' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L80-L88' title='Snippet source file'>snippet source</a> | <a href='#snippet-FeedResponse' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Resulting in:
