@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Verify" Version="24.1.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.126" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.127" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.39.1" />
   </ItemGroup>
 </Project>
