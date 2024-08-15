@@ -7,13 +7,7 @@
     <PackageTags>Azure, CosmosDB, Verify</PackageTags>
     <Description>Adds Verify (https://github.com/VerifyTests/Verify) support to verify Azure CosmosDB (https://docs.microsoft.com/en-us/azure/cosmos-db/)</Description>
     <NoWarn>CS1591;NU5105</NoWarn>
-    <PackageLicenseFile>license.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileFullPath)\..\..\license.txt"
-          Pack="true"
-          PackagePath="license.txt"/>
-  </ItemGroup>
 </Project>

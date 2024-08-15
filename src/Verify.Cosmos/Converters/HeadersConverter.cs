@@ -1,6 +1,4 @@
-﻿using Microsoft.Azure.Cosmos;
-
-class HeadersConverter :
+﻿class HeadersConverter :
     WriteOnlyJsonConverter<Headers>
 {
     public override void Write(VerifyJsonWriter writer, Headers headers)
