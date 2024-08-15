@@ -38,7 +38,7 @@ var response = await container.CreateItemAsync(
     new PartitionKey(item.LastName));
 await Verify(response);
 ```
-<sup><a href='/src/Tests/Tests.cs#L47-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-ItemResponse' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L44-L51' title='Snippet source file'>snippet source</a> | <a href='#snippet-ItemResponse' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Resulting in:
@@ -78,7 +78,7 @@ using var iterator = container.GetItemLinqQueryable<Family>()
 var feedResponse = await iterator.ReadNextAsync();
 await Verify(feedResponse);
 ```
-<sup><a href='/src/Tests/Tests.cs#L80-L88' title='Snippet source file'>snippet source</a> | <a href='#snippet-FeedResponse' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L77-L85' title='Snippet source file'>snippet source</a> | <a href='#snippet-FeedResponse' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Resulting in:
