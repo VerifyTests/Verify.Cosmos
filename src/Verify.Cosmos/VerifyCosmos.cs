@@ -1,6 +1,4 @@
-﻿using Microsoft.Azure.Cosmos;
-
-namespace VerifyTests;
+﻿namespace VerifyTests;
 
 public static class VerifyCosmos
 {

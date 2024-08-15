@@ -1,6 +1,4 @@
-﻿using Microsoft.Azure.Cosmos;
-
-class ResponseConverter :
+﻿class ResponseConverter :
     WriteOnlyJsonConverter
 {
     public override void Write(VerifyJsonWriter writer, object response)

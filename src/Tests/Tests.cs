@@ -1,7 +1,4 @@
-﻿using Microsoft.Azure.Cosmos;
-using Microsoft.Azure.Cosmos.Linq;
-
-public class Tests
+﻿public class Tests
 {
     static CosmosClient client = new(
         "https://localhost:8081",

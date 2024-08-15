@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-public class Family
+﻿public class Family
 {
     [JsonProperty(PropertyName = "id")]
     public string Id { get; set; } = null!;
