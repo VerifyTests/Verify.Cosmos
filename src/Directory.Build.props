@@ -6,7 +6,7 @@
     <LangVersion>preview</LangVersion>
     <PackageTags>Azure, CosmosDB, Verify</PackageTags>
     <Description>Adds Verify (https://github.com/VerifyTests/Verify) support to verify Azure CosmosDB (https://docs.microsoft.com/en-us/azure/cosmos-db/)</Description>
-    <NoWarn>CS1591;NU5105</NoWarn>
+    <NoWarn>CS1591;NU5105;NU1608;NU1109</NoWarn>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
   </PropertyGroup>
