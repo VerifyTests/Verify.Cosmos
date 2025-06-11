@@ -8,6 +8,12 @@ Adds [Verify](https://github.com/VerifyTests/Verify) support to verify [Azure Co
 
 **See [Milestones](../../milestones?state=closed) for release notes.**
 
+
+## Sponsors
+
+include: zzz
+
+
 ## NuGet
 
  * https://nuget.org/packages/Verify.Cosmos
