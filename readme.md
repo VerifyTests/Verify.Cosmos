@@ -1,7 +1,7 @@
 # <img src="/src/icon.png" height="30px"> Verify.Cosmos
 
 [![Discussions](https://img.shields.io/badge/Verify-Discussions-yellow?svg=true&label=)](https://github.com/orgs/VerifyTests/discussions)
-[![Build status](https://ci.appveyor.com/api/projects/status/89flq4nfrcmnykd0?svg=true)](https://ci.appveyor.com/project/SimonCropp/Verify-Cosmos)
+[![Build status](https://img.shields.io/appveyor/build/SimonCropp/Verify-Cosmos)](https://ci.appveyor.com/project/SimonCropp/Verify-Cosmos)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.Cosmos.svg)](https://www.nuget.org/packages/Verify.Cosmos/)
 
 Adds [Verify](https://github.com/VerifyTests/Verify) support to verify [Azure CosmosDB](https://docs.microsoft.com/en-us/azure/cosmos-db/).<!-- singleLineInclude: intro. path: /docs/intro.include.md -->
