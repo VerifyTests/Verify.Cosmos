@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.2.0" />
     <PackageVersion Include="Microsoft.Azure.Cosmos" Version="3.58.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.5.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.5.1" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.173" />
     <PackageVersion Include="Verify" Version="31.16.2" />
