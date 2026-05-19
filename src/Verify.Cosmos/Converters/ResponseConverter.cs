@@ -4,7 +4,7 @@
     public override void Write(VerifyJsonWriter writer, object response)
     {
         writer.WriteStartObject();
-        var o = (dynamic) response;
+        dynamic o = response;
         writer.WriteMember(o, VerifyCosmos.RoundRequestCharge(o), "RequestCharge");
         writer.WriteMember(o, o.Headers, "Headers");
         writer.WriteMember(o, o.StatusCode, "StatusCode");
