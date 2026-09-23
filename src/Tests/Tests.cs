@@ -11,6 +11,7 @@
     [Fact]
     public async Task DatabaseResponse()
     {
+        await client.CreateDatabaseIfNotExistsAsync("db");
         var database = await client.CreateDatabaseIfNotExistsAsync("db");
         await Verify(database);
     }
@@ -19,6 +20,9 @@
     public async Task ContainerResponse()
     {
         Database database = await client.CreateDatabaseIfNotExistsAsync("db");
+        // Ensure the container exists first so the verified response is always the "already exists"
+        // one, regardless of which test touches the container first on a fresh emulator.
+        await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
         var container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
         await Verify(container);
     }
