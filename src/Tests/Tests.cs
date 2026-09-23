@@ -24,7 +24,9 @@
         // one, regardless of which test touches the container first on a fresh emulator.
         await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
         var container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
-        await Verify(container);
+        // The charge for this call varies between emulator versions (1 RU locally, 2 RU on CI).
+        await Verify(container)
+            .ScrubMember("RequestCharge");
     }
 
     [Fact]
