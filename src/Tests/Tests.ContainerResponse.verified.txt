@@ -22,6 +22,5 @@
     Content-Location: https://127.0.0.1:8081/dbs/db/colls/items
   },
   StatusCode: OK,
-  RequestCharge: Scrubbed,
   ActivityId: Guid_1
 }

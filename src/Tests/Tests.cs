@@ -26,7 +26,7 @@
         var container = await database.CreateContainerIfNotExistsAsync("items", "/LastName", 400);
         // The charge for this call varies between emulator versions (1 RU locally, 2 RU on CI).
         await Verify(container)
-            .ScrubMember("RequestCharge");
+            .IgnoreMember("RequestCharge");
     }
 
     [Fact]
